@@ -17,13 +17,10 @@ if ($version !~ /_|TRIAL/) {
     my $file = 'Changes';
     my $contents = slurp $file;
 
-    my $alt_version = $version;
-    $alt_version =~ s/^(\d+\.\d{3})(?=\d)/$1_/;
-
     $contents =~ m{
         \n
         \n
-        (?: \Q$version\E | \Q$alt_version\E ) \s+ \d{4}-\d{2}-\d{2} \n
+        \Q$version\E \s+ \d{4}-\d{2}-\d{2} \n
         [^\n\w]* \w
     }x or push @errors, "$file doesn't seem to contain an entry for $version";
 }
@@ -43,14 +40,12 @@ for my $module (@modules) {
     $contents =~ m{
         ^ [ \t]* (?: our [ \t]+ )?
         \$ (?: \Q$pkg\E :: )? VERSION [ \t]* = [ \t]*
-        ( \d+ (?: _ \d+ )* (?: \. \d+ (?: _ \d+ )* )? | '([^'\\]+)' ) ;
+        ( \d+ (?: \. \d+ )? | '([^'\\]+)' ) ;
     }xm or do {
         push @errors, "$module doesn't contain a parsable VERSION declaration";
         next;
     };
     my $v = $+;
-    $v =~ s/(?<=\d)_(?=\d)//g
-        if $v =~ /^\d/;
 
     $v eq $version
         or push @errors, "$module version '$v' doesn't match distribution version '$version'";
