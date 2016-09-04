@@ -1,0 +1,9 @@
+Changes
+MANIFEST
+MANIFEST.SKIP
+Makefile.PL
+Makefile_PL_settings
+README
+lib/URL/Search.pm
+t/test.t
+xt/pod.t
