@@ -16,6 +16,10 @@ our @EXPORT_OK = qw(
 our $URL_SEARCH_RE = do {
     my $general_unicode = qr{
         [^\p{ASCII}\p{Control}\p{Space}\p{Punct}]
+    |
+        [\x{2010}\x{2011}\x{2012}\x{2013}\x{2014}\x{2015}]
+        # HYPHEN, NON-BREAKING HYPHEN,
+        # FIGURE DASH, EN DASH, EM DASH, HORIZONTAL BAR
     }xms;
 
     my $protocol = qr{
