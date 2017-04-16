@@ -2,7 +2,7 @@ Changes
 MANIFEST
 MANIFEST.SKIP
 Makefile.PL
-Makefile_PL_settings
+Makefile_PL_settings.plx
 README
 lib/URL/Search.pm
 t/test.t
