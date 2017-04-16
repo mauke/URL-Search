@@ -1,5 +1,8 @@
 Revision history for URL-Search
 
+0.000004  2017-04-16
+          - don't rely on '.' in @INC
+
 0.000003  2016-09-20
           - allow various Unicode hyphens/dashes because Wikipedia uses EN DASH
             in paths
