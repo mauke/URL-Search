@@ -124,7 +124,7 @@ our $URL_SEARCH_RE = do {
     my $query = qr{
         (
             (?:
-                [a-zA-Z0-9\-._~!\$&'*+,;=:\@/?]
+                [a-zA-Z0-9\-._~!\$&'*+,;=:\@/?\\{}]
             |
                 $pct_enc
             |
@@ -140,10 +140,8 @@ our $URL_SEARCH_RE = do {
     my $fragment = $query;
 
     qr{
-        (?:
-            $protocol ://
-            (?: $userinfo \@ )?
-        )
+        $protocol ://
+        (?: $userinfo \@ )?
         $host (?: : [0-9]+ )?
         $path?
         (?: \? $query )?
