@@ -1,9 +1,8 @@
 Changes
-MANIFEST
-MANIFEST.SKIP
+lib/URL/Search.pm
 Makefile.PL
 Makefile_PL_settings.plx
-README
-lib/URL/Search.pm
+MANIFEST
+MANIFEST.SKIP
 t/test.t
 xt/pod.t
