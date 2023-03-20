@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/mauke/URL-Search/badge.svg?branch=master)](https://coveralls.io/github/mauke/URL-Search?branch=master)
+
 # NAME
 
 URL::Search - search for URLs in plain text

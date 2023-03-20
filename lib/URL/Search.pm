@@ -179,13 +179,15 @@ __END__
 
 =encoding utf8
 
-=for highlighter language=perl
+=for github-markdown [![Coverage Status](https://coveralls.io/repos/github/mauke/URL-Search/badge.svg?branch=master)](https://coveralls.io/github/mauke/URL-Search?branch=master)
 
 =head1 NAME
 
 URL::Search - search for URLs in plain text
 
 =head1 SYNOPSIS
+
+=for highlighter language=perl
 
   use URL::Search qw( $URL_SEARCH_RE extract_urls partition_urls );
 
