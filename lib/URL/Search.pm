@@ -179,7 +179,7 @@ __END__
 
 =encoding utf8
 
-=for github-markdown [![Coverage Status](https://coveralls.io/repos/github/mauke/URL-Search/badge.svg?branch=master)](https://coveralls.io/github/mauke/URL-Search?branch=master)
+=for github-markdown [![Coverage Status](https://coveralls.io/repos/github/mauke/URL-Search/badge.svg?branch=main)](https://coveralls.io/github/mauke/URL-Search?branch=main)
 
 =head1 NAME
 

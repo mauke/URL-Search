@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/mauke/URL-Search/badge.svg?branch=master)](https://coveralls.io/github/mauke/URL-Search?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/mauke/URL-Search/badge.svg?branch=main)](https://coveralls.io/github/mauke/URL-Search?branch=main)
 
 # NAME
 
