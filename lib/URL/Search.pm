@@ -205,7 +205,9 @@ request) the following entities:
 This variable is the core of this module. It contains a regex that matches a URL.
 
 NOTE: This regex uses capturing groups internally, so if you embed it in a
-bigger pattern, the numbering of any following capture groups will be off.
+bigger pattern, the numbering of any following capture groups will be off. If
+this is an issue, use named capture groups of the form C<< (?<NAME>...) >>
+instead. See L<perlre/Capture groups>.
 
 It only matches URLs with an explicit schema (one of C<http>, C<https>, C<ftp>,
 C<ftps>). The pattern is deliberately not anchored at the beginning, i.e. it
@@ -320,11 +322,10 @@ L<C<perldoc>|perldoc> command.
 
     perldoc URL::Search
 
-You can also look for information at
-L<https://metacpan.org/pod/URL::Search>.
+You can also look for information at L<https://metacpan.org/pod/URL::Search>.
 
 To see a list of open bugs, visit
-L<https://rt.cpan.org/Public/Dist/Display.html?Name=URL-Search>.
+L<https://rt.cpan.org/Dist/Display.html?Name=URL-Search>.
 
 To report a new bug, send an email to
 C<bug-URL-Search [at] rt.cpan.org>.
@@ -335,10 +336,10 @@ Lukas Mai, C<< <l.mai at web.de> >>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2016, 2017 Lukas Mai.
+Copyright 2016, 2017, 2023 Lukas Mai.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published
 by the Free Software Foundation; or the Artistic License.
 
-See L<http://dev.perl.org/licenses/> for more information.
+See L<https://dev.perl.org/licenses/> for more information.
