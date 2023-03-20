@@ -28,10 +28,10 @@ bigger pattern, the numbering of any following capture groups will be off. If
 this is an issue, use named capture groups of the form `(?<NAME>...)`
 instead. See ["Capture groups" in perlre](https://metacpan.org/pod/perlre#Capture-groups).
 
-It only matches URLs with an explicit schema (one of `http`, `https`, `ftp`,
-`ftps`). The pattern is deliberately not anchored at the beginning, i.e. it
-will match `http://foo` in `"click herehttp://foo"`. If you don't want that,
-use `/\b$URL_SEARCH_RE/`.
+It only matches URLs with an explicit schema (one of `http` or `https`). The
+pattern is deliberately not anchored at the beginning, i.e. it will match
+`http://foo` in `"click herehttp://foo"`. If you don't want that, use
+`/\b$URL_SEARCH_RE/`.
 
 It tries to exclude artifacts of the surrounding text:
 

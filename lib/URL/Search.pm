@@ -23,7 +23,7 @@ our $URL_SEARCH_RE = do {
     }xms;
 
     my $protocol = qr{
-        (?: [Hh][Tt] | [Ff] ) [Tt][Pp] [Ss]?
+        [Hh][Tt][Tt][Pp] [Ss]?
     }xms;
 
     my $unreserved_subdelims_colon = qr{
@@ -209,10 +209,10 @@ bigger pattern, the numbering of any following capture groups will be off. If
 this is an issue, use named capture groups of the form C<< (?<NAME>...) >>
 instead. See L<perlre/Capture groups>.
 
-It only matches URLs with an explicit schema (one of C<http>, C<https>, C<ftp>,
-C<ftps>). The pattern is deliberately not anchored at the beginning, i.e. it
-will match C<http://foo> in C<"click herehttp://foo">. If you don't want that,
-use C</\b$URL_SEARCH_RE/>.
+It only matches URLs with an explicit schema (one of C<http> or C<https>). The
+pattern is deliberately not anchored at the beginning, i.e. it will match
+C<http://foo> in C<"click herehttp://foo">. If you don't want that, use
+C</\b$URL_SEARCH_RE/>.
 
 It tries to exclude artifacts of the surrounding text:
 
