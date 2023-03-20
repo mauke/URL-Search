@@ -1,0 +1,54 @@
+name: "run tests"
+on:
+  [push, pull_request]
+
+jobs:
+  perl_matrix:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - "ubuntu-latest"
+          - "macos-latest"
+          - "windows-latest"
+        perl-version:
+          - "5.10"
+          - "5.12"
+          - "5.14"
+          - "5.16"
+          - "5.18"
+          - "5.20"
+          - "5.22"
+          - "5.24"
+          - "5.26"
+          - "5.28"
+          - "5.30"
+          - "5.32"
+          - "5.34"
+          - "5.36"
+
+    runs-on: ${{ matrix.os }}
+    name: "perl v${{ matrix.perl-version }} on ${{ matrix.os }}"
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: "Set up perl"
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: ${{ matrix.perl-version }}
+      - run: cpanm --installdeps --with-develop --notest .
+      - run: perl Makefile.PL
+      - run: make test
+  coverage:
+    runs-on: ubuntu-latest
+    name: "test coverage via Coveralls.io"
+    steps:
+      - uses: actions/checkout@v3
+      - name: "Set up perl"
+        uses: shogo82148/actions-setup-perl@v1
+      - run: cpanm --installdeps --with-develop --notest .
+      - run: cpanm --notest Devel::Cover::Report::Coveralls
+      - run: perl Makefile.PL
+      - run: cover -test -report Coveralls
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
