@@ -5,7 +5,7 @@ use v5.10.0;  # recursive regex subgroups
 
 use Exporter 5.57 qw(import);
 
-our $VERSION = '0.000005';
+our $VERSION = '0.06';
 
 our @EXPORT_OK = qw(
     $URL_SEARCH_RE
